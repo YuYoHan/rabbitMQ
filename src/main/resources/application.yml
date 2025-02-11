@@ -1,0 +1,50 @@
+spring:
+  # RabbitMQ 설정
+  rabbitmq:
+    host: localhost
+    port: 5672
+    stream:
+      username: guestuser
+      password: guestuser
+  application:
+    name: HelloMessageQueue
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  # 데이터베이스
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      maximum-pool-size: 40
+  # JPA 설정
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+  # 타임리프 설정
+  thymeleaf:
+    enabled: true
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+# JWT 설정
+jwt:
+  secretKey: dsaoiuxcjxzkjckxjcsakjksaeyhadkmcxnnbcmnvbcxnmvbcxnmvxuehfsdklfjdslk
+
+# 로깅 설정
+logging:
+  level:
+    org.hibernate.sql: debug
