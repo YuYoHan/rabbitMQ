@@ -3,9 +3,8 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    stream:
-      username: guestuser
-      password: guestuser
+    username: gusetuser
+    password: 1234
   application:
     name: HelloMessageQueue
   devtools:
