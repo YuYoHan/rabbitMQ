@@ -46,6 +46,7 @@ public class RabbitMQConfig {
         return container;
     }
 
+    // 메시지를 받아서 특정 객체(Receiver)의 메서드(receiveMessage)를 호출하도록 설정
     @Bean
     public MessageListenerAdapter listenerAdapter(Receiver receiver) {
         return new MessageListenerAdapter(receiver, "receiveMessage");
