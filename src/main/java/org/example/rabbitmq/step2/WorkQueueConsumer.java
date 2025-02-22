@@ -1,4 +1,4 @@
-package org.example.rabbitmq.step1;
+package org.example.rabbitmq.step2;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;
