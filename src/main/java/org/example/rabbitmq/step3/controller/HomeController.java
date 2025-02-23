@@ -12,4 +12,9 @@ public class HomeController {
         model.addAttribute("message", "Welcome to RabbitMQ Sample");
         return "home";
     }
+
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
 }
