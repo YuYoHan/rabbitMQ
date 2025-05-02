@@ -19,13 +19,13 @@ public class OrderConsumer {
     public void consume(String message) {
         retryTemplate.execute(context -> {
             try {
-                log.debug("리시브 메시지 : " + message + " # retry : " + context.getRetryCount());
+                log.debug("리시브 메시지 : " + message + " [#] retry : " + context.getRetryCount());
 
                 // 실패 조건
                 if("fail".equalsIgnoreCase(message)) {
                     throw new RuntimeException(message);
                 }
-                log.debug("# 메시지 처리 성공 : " + message);
+                log.debug("[#] 메시지 처리 성공 : " + message);
             } catch (Exception e) {
                 if(context.getRetryCount() >= 2) {
                     rabbitTemplate.convertAndSend(RabbitMQConfig.ORDER_TOPIC_DLX,
